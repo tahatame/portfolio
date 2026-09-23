@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taha Tamer | AWS Cloud Engineer & Network Specialist</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-[#080B12] text-[#F8FAFC] antialiased selection:bg-[#FF9900] selection:text-[#080B12] relative body-rest-bg">
+
+    <!-- Interactive Animated Network Background Canvas -->
+    <canvas id="network-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-[#080B12]/90 backdrop-blur-md border-b border-[rgba(255,255,255,0.08)] z-50 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#" class="text-xl font-bold tracking-tight text-[#F8FAFC] flex items-center gap-2">
+                <span class="text-[#FF9900] font-mono">&lt;TahaTamer /&gt;</span>
+            </a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-[#94A3B8]">
+                <a href="#about" class="hover:text-[#FF9900] transition">About</a>
+                <a href="#skills" class="hover:text-[#FF9900] transition">Skills</a>
+                <a href="#projects" class="hover:text-[#FF9900] transition">Projects</a>
+                <a href="#timeline" class="hover:text-[#FF9900] transition">Training & Ed</a>
+                <a href="#youtube" class="hover:text-[#FF0000] transition">Cloud With Taha</a>
+                <a href="#contact" class="hover:text-[#FF9900] transition">Contact</a>
+            </div>
+            <a href="#contact" class="px-4 py-2 bg-[#FF9900] hover:bg-[#ffaa22] text-[#080B12] font-semibold rounded-lg text-xs transition shadow-[0_0_12px_rgba(255,153,0,0.15)] relative z-10">
+                Get In Touch
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Triple Image Background (bg1 - bg3 in Center - bg2) -->
+    <section class="min-h-screen flex items-center justify-center pt-24 pb-16 px-6 relative z-10 hero-triple-container">
+        
+        <!-- Triple Background Image Columns Overlay -->
+        <div class="hero-triple-bg-overlay">
+            <div class="hero-bg-col hero-bg-col-1"></div>
+            <div class="hero-bg-col hero-bg-col-2"></div> <!-- bg3 in CENTER -->
+            <div class="hero-bg-col hero-bg-col-3"></div>
+        </div>
+        <div class="hero-dark-mask"></div>
+
+        <div class="max-w-5xl mx-auto text-center relative z-20">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 mb-6 text-xs font-mono tracking-wide text-[#CBD5E1] bg-[#111827]/90 backdrop-blur border border-[rgba(255,255,255,0.12)] rounded-full shadow-lg">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#22C55E] animate-pulse"></span>
+                AVAILABLE FOR CLOUD / NETWORKING OPPORTUNITIES
+            </div>
+            <h1 class="text-4xl sm:text-6xl font-extrabold text-[#F8FAFC] tracking-tight mb-6 leading-tight">
+                Architecting Cloud Security & <br class="hidden sm:inline"/>
+                <span class="text-[#FF9900]">Enterprise Network Infrastructure</span>
+            </h1>
+            <p class="text-[#CBD5E1] text-base sm:text-lg max-w-3xl mx-auto mb-10 leading-relaxed">
+                Building secure cloud infrastructure with <span class="text-[#FF9900] font-semibold">AWS Cloud</span>, Cisco networking, Linux, and Infrastructure as Code (Terraform). Focused on resilient, highly available systems.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#projects" class="px-6 py-3 bg-[#FF9900] hover:bg-[#ffaa22] text-[#080B12] font-bold rounded-xl transition shadow-[0_0_20px_rgba(255,153,0,0.25)] flex items-center gap-2 text-sm">
+                    <i class="fas fa-folder-open"></i> Explore Projects
+                </a>
+                <a href="https://github.com/tahatame" target="_blank" class="px-6 py-3 bg-[#111827]/90 backdrop-blur border border-[rgba(255,255,255,0.15)] hover:border-[#FF9900]/50 text-[#F8FAFC] font-medium rounded-xl transition flex items-center gap-2 text-sm">
+                    <i class="fab fa-github"></i> GitHub Profile
+                </a>
+            </div>
+            
+            <!-- Quick Info Bar -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto text-left">
+                <div class="p-4 bg-[#111827]/90 backdrop-blur border border-[rgba(255,255,255,0.1)] rounded-xl shadow-lg">
+                    <div class="text-xs text-[#94A3B8] uppercase font-semibold">Location</div>
+                    <div class="text-sm font-semibold text-[#F8FAFC] mt-1">Al-Wasta, Beni Suef, EG</div>
+                </div>
+                <div class="p-4 bg-[#111827]/90 backdrop-blur border border-[rgba(255,255,255,0.1)] rounded-xl shadow-lg">
+                    <div class="text-xs text-[#94A3B8] uppercase font-semibold">University</div>
+                    <div class="text-sm font-semibold text-[#F8FAFC] mt-1">New Assiut Tech Univ</div>
+                </div>
+                <div class="p-4 bg-[#111827]/90 backdrop-blur border border-[rgba(255,255,255,0.1)] rounded-xl shadow-lg">
+                    <div class="text-xs text-[#94A3B8] uppercase font-semibold">Graduation</div>
+                    <div class="text-sm font-semibold text-[#F8FAFC] mt-1">Expected July 2027</div>
+                </div>
+                <div class="p-4 bg-[#111827]/90 backdrop-blur border border-[rgba(255,255,255,0.1)] rounded-xl shadow-lg">
+                    <div class="text-xs text-[#94A3B8] uppercase font-semibold">Academic Rank</div>
+                    <div class="text-sm font-semibold text-[#FF9900] mt-1">Top Student (Excellent)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-[#0D111C]/85 backdrop-blur border-y border-[rgba(255,255,255,0.08)] px-6 relative z-10">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-xs font-mono font-bold text-[#FF9900] uppercase tracking-widest mb-2">Background & Focus</h2>
+                <h3 class="text-3xl font-extrabold text-[#F8FAFC]">About My Technical Journey</h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="md:col-span-2 space-y-4 text-[#CBD5E1] text-sm leading-relaxed bg-[#111827]/90 backdrop-blur p-8 rounded-2xl border border-[rgba(255,255,255,0.08)] shadow-lg">
+                    <p>
+                        I am a fourth-year IT Network student at <strong class="text-[#F8FAFC]">New Assiut Technological University</strong> with a consistent track record of academic excellence, ranking among the top students for three consecutive years.
+                    </p>
+                    <p>
+                        My career path follows a structured roadmap: <strong class="text-[#F8FAFC]">Networking Fundamentals (Cisco CCNA) → Linux Administration → AWS Cloud Architecture → Cloud Security & Infrastructure as Code (Terraform)</strong>.
+                    </p>
+                    <p>
+                        Beyond cloud and networking, I have developed end-to-end academic systems integrating Artificial Intelligence, IoT microcontrollers (ESP32 / Raspberry Pi), Python network programming, and web applications.
+                    </p>
+                </div>
+                <div class="bg-[#111827]/90 backdrop-blur p-6 rounded-2xl border border-[rgba(255,255,255,0.08)] flex flex-col justify-between shadow-lg">
+                    <div>
+                        <div class="text-[#FF9900] font-bold text-sm mb-4"><i class="fas fa-bullseye mr-2"></i>Career Target</div>
+                        <h4 class="text-lg font-bold text-[#F8FAFC] mb-2">AWS Cloud Engineer / Security Specialist</h4>
+                        <p class="text-xs text-[#CBD5E1] leading-relaxed mb-6">
+                            Seeking to leverage a deep networking background to design, provision, and secure AWS cloud infrastructure.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-[rgba(255,255,255,0.08)] text-xs text-[#94A3B8]">
+                        <i class="fas fa-chalkboard-teacher text-[#FF9900] mr-2"></i><strong class="text-[#CBD5E1]">Soft Skills Highlight:</strong> Speaker on communication & boundaries ("The Art of Saying No").
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Skills Section -->
+    <section id="skills" class="py-20 px-6 relative z-10">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-xs font-mono font-bold text-[#FF9900] uppercase tracking-widest mb-2">Capabilities</h2>
+                <h3 class="text-3xl font-extrabold text-[#F8FAFC]">Technical Stack & Core Competencies</h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Cloud & AWS -->
+                <div class="bg-[#111827]/90 backdrop-blur p-6 rounded-2xl border border-[rgba(255,255,255,0.08)] hover:border-[rgba(255,153,0,0.3)] transition shadow-lg">
+                    <div class="w-10 h-10 bg-[#FF9900]/10 text-[#FF9900] rounded-xl flex items-center justify-center text-xl mb-4"><i class="fab fa-aws"></i></div>
+                    <h4 class="text-base font-bold text-[#F8FAFC] mb-3">AWS Cloud & Security</h4>
+                    <div class="flex flex-wrap gap-1.5 text-xs font-mono">
+                        <span class="bg-[#080B12] border border-[rgba(255,255,255,0.08)] px-2.5 py-1 rounded-md text-[#CBD5E1]">VPC</span>
+                        <span class="bg-[#080B12] border border-[rgba(255,255,255,0.08)] px-2.5 py-1 rounded-md text-[#CBD5E1]">EC2</span>
+                        <span class="bg-[#080B12] border border-[rgba(255,255,255,0.08)] px-2.5 py-1 rounded-md text-[#CBD5E1]">S3</span>
+                        <span class="bg-[#080B12] border border-[rgba(255,255,255,0.08)] px-2.5 py-1 rounded-md text-[#CBD5E1]">AWS IAM</span>
+                        <span class="bg-[#080B12] border border-[rgba(255,255,255,0.08)] px-2.5 py-1 rounded-md text-[#CBD5E1]">Security Groups</span>
+                        <span class="bg-[#080B12] border border-[rgba(255,255,255,0.08)] px-2.5 py-1 rounded-md text-[#8B5CF6]">KMS Encryption</span>
+                        <span class="bg-[#080B12] border border-[rgba(255,255,255,0.08)] px-2.5 py-1 rounded-md text-[#CBD5E1]">CloudTrail</span>
+                        <span class="bg-[#080B12] border border-[rgba(255,255,255,0.08)] px-2.5 py-1 rounded-md text-[#CBD5E1]">CloudWatch</span>
+                        <span class="bg-[#080B12] border border-[rgba(255,255,255,0.08)] px-2.5 py-1 rounded-md text-[#CBD5E1]">Lambda</span>
+                        <span class="bg-[#080B12] border border-[rgba(255,255,255,0.08)] px-2.5 py-1 rounded-md text-[#CBD5E1]">RDS</span>
+                    </div>
+                </div>
+
+                <!-- Cisco Networking -->
+                <div class="bg-[#111827]/90 backdrop-blur p-6 rounded-2xl border border-[rgba(255,255,255,0.08)] hover:border-[rgba(255,255,255,0.2)] transition shadow-lg">
+                    <div class="w-10 h-10 bg-[#CBD5E1]/10 text-[#CBD5E1] rounded-xl flex items-center justify-center text-xl mb-4"><i class="fas fa-network-wired"></i></div>
+                    <h4 class="text-base font-bold text-[#F8FAFC] mb-3">Cisco Enterprise Networking</h4>
+                    <div class="flex flex-wrap gap-1.5 text-xs font-mono">
+                        <span class="bg-[#080B12] border border-[rgba(255,255,255,0.08)] px-2.5 py-1 rounded-md text-[#CBD5E1]">CCNA Core</span>
+                        <span class="bg-[#080B12] border border-[rgba(255,255,255,0.08)] px-2.5 py-1 rounded-md text-[#CBD5E1]">TCP/IP & OSI</span>
+                        <span class="bg-[#080B12] border border-[rgba(255,255,255,0.08)] px-2.5 py-1 rounded-md text-[#CBD5E1]">IPv4 / Subnetting</span>
+                        <span class="bg-[#080B12] border border-[rgba(255,255,255,0.08)] px-2.5 py-1 rounded-md text-[#CBD5E1]">VLANs & Trunking</span>
+                        <span class="bg-[#080B12] border border-[rgba(255,255,255,0.08)] px-2.5 py-1 rounded-md text-[#CBD5E1]">OSPF Routing</span>
+                        <span class="bg-[#080B12] border border-[rgba(255,255,255,0.08)] px-2.5 py-1 rounded-md text-[#CBD5E1]">ACLs</span>
+                        <span class="bg-[#080B12] border border-[rgba(255,255,255,0.08)] px-2.5 py-1 rounded-md text-[#CBD5E1]">Port Security</span>
+                        <span class="bg-[#080B12] border border-[rgba(255,255,255,0.08)] px-2.5 py-1 rounded-md text-[#CBD5E1]">Packet Tracer</span>
+                    </div>
+                </div>
+
+                <!-- IaC & Linux OS -->
+                <div class="bg-[#111827]/90 backdrop-blur p-6 rounded-2xl border border-[rgba(255,255,255,0.08)] hover:border-[rgba(255,255,255,0.2)] transition shadow-lg">
+                    <div class="w-10 h-10 bg-[#CBD5E1]/10 text-[#CBD5E1] rounded-xl flex items-center justify-center text-xl mb-4"><i class="fas fa-terminal"></i></div>
+                    <h4 class="text-base font-bold text-[#F8FAFC] mb-3">Infrastructure as Code & OS</h4>
+                    <div class="flex flex-wrap gap-1.5 text-xs font-mono">
+                        <span class="bg-[#080B12] border border-[rgba(255,255,255,0.08)] px-2.5 py-1 rounded-md text-[#FF9900]">Terraform</span>
+                        <span class="bg-[#080B12] border border-[rgba(255,255,255,0.08)] px-2.5 py-1 rounded-md text-[#CBD5E1]">Git & GitHub</span>
+                        <span class="bg-[#080B12] border border-[rgba(255,255,255,0.08)] px-2.5 py-1 rounded-md text-[#CBD5E1]">Linux (Ubuntu)</span>
+                        <span class="bg-[#080B12] border border-[rgba(255,255,255,0.08)] px-2.5 py-1 rounded-md text-[#CBD5E1]">Bash CLI</span>
+                        <span class="bg-[#080B12] border border-[rgba(255,255,255,0.08)] px-2.5 py-1 rounded-md text-[#CBD5E1]">PowerShell</span>
+                        <span class="bg-[#080B12] border border-[rgba(255,255,255,0.08)] px-2.5 py-1 rounded-md text-[#CBD5E1]">VMware</span>
+                    </div>
+                </div>
+
+                <!-- Programming -->
+                <div class="bg-[#111827]/90 backdrop-blur p-6 rounded-2xl border border-[rgba(255,255,255,0.08)] hover:border-[rgba(255,255,255,0.2)] transition shadow-lg">
+                    <div class="w-10 h-10 bg-[#CBD5E1]/10 text-[#CBD5E1] rounded-xl flex items-center justify-center text-xl mb-4"><i class="fas fa-code"></i></div>
+                    <h4 class="text-base font-bold text-[#F8FAFC] mb-3">Programming & Web</h4>
+                    <div class="flex flex-wrap gap-1.5 text-xs font-mono">
+                        <span class="bg-[#080B12] border border-[rgba(255,255,255,0.08)] px-2.5 py-1 rounded-md text-[#CBD5E1]">Python</span>
+                        <span class="bg-[#080B12] border border-[rgba(255,255,255,0.08)] px-2.5 py-1 rounded-md text-[#CBD5E1]">Socket Programming</span>
+                        <span class="bg-[#080B12] border border-[rgba(255,255,255,0.08)] px-2.5 py-1 rounded-md text-[#CBD5E1]">C++</span>
+                        <span class="bg-[#080B12] border border-[rgba(255,255,255,0.08)] px-2.5 py-1 rounded-md text-[#CBD5E1]">Java SE</span>
+                        <span class="bg-[#080B12] border border-[rgba(255,255,255,0.08)] px-2.5 py-1 rounded-md text-[#CBD5E1]">ASP.NET MVC</span>
+                        <span class="bg-[#080B12] border border-[rgba(255,255,255,0.08)] px-2.5 py-1 rounded-md text-[#CBD5E1]">SQL Server</span>
+                        <span class="bg-[#080B12] border border-[rgba(255,255,255,0.08)] px-2.5 py-1 rounded-md text-[#CBD5E1]">FastAPI</span>
+                    </div>
+                </div>
+
+                <!-- AI & IoT -->
+                <div class="bg-[#111827]/90 backdrop-blur p-6 rounded-2xl border border-[rgba(255,255,255,0.08)] hover:border-[rgba(255,255,255,0.2)] transition lg:col-span-2 shadow-lg">
+                    <div class="w-10 h-10 bg-[#CBD5E1]/10 text-[#CBD5E1] rounded-xl flex items-center justify-center text-xl mb-4"><i class="fas fa-microchip"></i></div>
+                    <h4 class="text-base font-bold text-[#F8FAFC] mb-3">AI & IoT Integration</h4>
+                    <div class="flex flex-wrap gap-1.5 text-xs font-mono">
+                        <span class="bg-[#080B12] border border-[rgba(255,255,255,0.08)] px-2.5 py-1 rounded-md text-[#CBD5E1]">Raspberry Pi</span>
+                        <span class="bg-[#080B12] border border-[rgba(255,255,255,0.08)] px-2.5 py-1 rounded-md text-[#CBD5E1]">ESP32 Microcontrollers</span>
+                        <span class="bg-[#080B12] border border-[rgba(255,255,255,0.08)] px-2.5 py-1 rounded-md text-[#CBD5E1]">Soil Moisture & Environmental Sensors</span>
+                        <span class="bg-[#080B12] border border-[rgba(255,255,255,0.08)] px-2.5 py-1 rounded-md text-[#CBD5E1]">TensorFlow / MobileNet</span>
+                        <span class="bg-[#080B12] border border-[rgba(255,255,255,0.08)] px-2.5 py-1 rounded-md text-[#CBD5E1]">Flutter Mobile App</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-[#0D111C]/85 backdrop-blur border-t border-[rgba(255,255,255,0.08)] px-6 relative z-10">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-xs font-mono font-bold text-[#FF9900] uppercase tracking-widest mb-2">Portfolio Showcase</h2>
+                <h3 class="text-3xl font-extrabold text-[#F8FAFC]">Academic & Practical Projects</h3>
+            </div>
+
+            <!-- Project Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Project 1: AWS Security -->
+                <div class="bg-[#111827]/90 backdrop-blur rounded-2xl p-6 border border-[rgba(255,255,255,0.08)] flex flex-col justify-between hover:border-[rgba(255,153,0,0.3)] transition shadow-lg">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-[10px] font-mono font-bold uppercase tracking-wider bg-[#FF9900]/10 text-[#FF9900] border border-[#FF9900]/20 px-2.5 py-1 rounded-full">AWS Cloud Security</span>
+                            <a href="https://github.com/tahatame/depi-aws-security-mini-project-1" target="_blank" class="text-[#94A3B8] hover:text-[#FF9900]"><i class="fab fa-github text-lg"></i></a>
+                        </div>
+                        <h4 class="text-lg font-bold text-[#F8FAFC] mb-2">Secure AWS Web Platform (IaC)</h4>
+                        <p class="text-xs text-[#CBD5E1] leading-relaxed mb-4">
+                            Terraform-driven AWS security mini-project developed in the DEPI track. Focuses on IAM, isolated VPC subnets, security group rules, and Infrastructure as Code workflows.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-1 text-[11px] font-mono text-[#CBD5E1] pt-4 border-t border-[rgba(255,255,255,0.08)]">
+                        <span class="bg-[#080B12] px-2 py-0.5 rounded text-[#FF9900]">AWS</span>
+                        <span class="bg-[#080B12] px-2 py-0.5 rounded text-[#FF9900]">Terraform</span>
+                        <span class="bg-[#080B12] px-2 py-0.5 rounded">VPC</span>
+                        <span class="bg-[#080B12] px-2 py-0.5 rounded text-[#8B5CF6]">IAM</span>
+                    </div>
+                </div>
+
+                <!-- Project 2: AI Smart Irrigation -->
+                <div class="bg-[#111827]/90 backdrop-blur rounded-2xl p-6 border border-[rgba(255,255,255,0.08)] flex flex-col justify-between hover:border-[rgba(255,255,255,0.2)] transition shadow-lg">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-[10px] font-mono font-bold uppercase tracking-wider bg-[#CBD5E1]/10 text-[#CBD5E1] border border-[#CBD5E1]/20 px-2.5 py-1 rounded-full">Graduation Project</span>
+                            <span class="text-[#CBD5E1]"><i class="fas fa-leaf"></i></span>
+                        </div>
+                        <h4 class="text-lg font-bold text-[#F8FAFC] mb-2">AI-Based Smart Irrigation System</h4>
+                        <p class="text-xs text-[#CBD5E1] leading-relaxed mb-4">
+                            End-to-end intelligent agricultural irrigation platform analyzing plant health via MobileNet AI model, combined with ESP32/Raspberry Pi sensors, FastAPI, and Flutter app.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-1 text-[11px] font-mono text-[#CBD5E1] pt-4 border-t border-[rgba(255,255,255,0.08)]">
+                        <span class="bg-[#080B12] px-2 py-0.5 rounded">ESP32</span>
+                        <span class="bg-[#080B12] px-2 py-0.5 rounded">Raspberry Pi</span>
+                        <span class="bg-[#080B12] px-2 py-0.5 rounded">TensorFlow</span>
+                        <span class="bg-[#080B12] px-2 py-0.5 rounded">Flutter</span>
+                    </div>
+                </div>
+
+                <!-- Project 3: Network Chat Server -->
+                <div class="bg-[#111827]/90 backdrop-blur rounded-2xl p-6 border border-[rgba(255,255,255,0.08)] flex flex-col justify-between hover:border-[rgba(255,255,255,0.2)] transition shadow-lg">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-[10px] font-mono font-bold uppercase tracking-wider bg-[#CBD5E1]/10 text-[#CBD5E1] border border-[#CBD5E1]/20 px-2.5 py-1 rounded-full">Network Programming</span>
+                            <span class="text-[#CBD5E1]"><i class="fas fa-comments"></i></span>
+                        </div>
+                        <h4 class="text-lg font-bold text-[#F8FAFC] mb-2">Multi-Client Network Chat Server</h4>
+                        <p class="text-xs text-[#CBD5E1] leading-relaxed mb-4">
+                            Concurrent Python socket programming implementation supporting client authentication, logging, and real-time TCP/IP multi-client messaging architecture.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-1 text-[11px] font-mono text-[#CBD5E1] pt-4 border-t border-[rgba(255,255,255,0.08)]">
+                        <span class="bg-[#080B12] px-2 py-0.5 rounded">Python</span>
+                        <span class="bg-[#080B12] px-2 py-0.5 rounded">Sockets</span>
+                        <span class="bg-[#080B12] px-2 py-0.5 rounded text-[#CBD5E1]">TCP/IP</span>
+                    </div>
+                </div>
+
+                <!-- Project 4: Network Analyzer -->
+                <div class="bg-[#111827]/90 backdrop-blur rounded-2xl p-6 border border-[rgba(255,255,255,0.08)] flex flex-col justify-between hover:border-[rgba(255,255,255,0.2)] transition shadow-lg">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-[10px] font-mono font-bold uppercase tracking-wider bg-[#CBD5E1]/10 text-[#CBD5E1] border border-[#CBD5E1]/20 px-2.5 py-1 rounded-full">Network Admin</span>
+                            <span class="text-[#CBD5E1]"><i class="fas fa-search font-mono"></i></span>
+                        </div>
+                        <h4 class="text-lg font-bold text-[#F8FAFC] mb-2">Smart Network Analyzer Tool</h4>
+                        <p class="text-xs text-[#CBD5E1] leading-relaxed mb-4">
+                            Python network inspection tool performing device discovery, MAC/IP address analysis, open port detection, protocol identification, and active connection analysis.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-1 text-[11px] font-mono text-[#CBD5E1] pt-4 border-t border-[rgba(255,255,255,0.08)]">
+                        <span class="bg-[#080B12] px-2 py-0.5 rounded">Python</span>
+                        <span class="bg-[#080B12] px-2 py-0.5 rounded text-[#CBD5E1]">Network Analysis</span>
+                        <span class="bg-[#080B12] px-2 py-0.5 rounded">Protocols</span>
+                    </div>
+                </div>
+
+                <!-- Project 5: Vulnerability Scanner -->
+                <div class="bg-[#111827]/90 backdrop-blur rounded-2xl p-6 border border-[rgba(255,255,255,0.08)] flex flex-col justify-between hover:border-[#8B5CF6]/40 transition shadow-lg">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-[10px] font-mono font-bold uppercase tracking-wider bg-[#8B5CF6]/10 text-[#8B5CF6] border border-[#8B5CF6]/20 px-2.5 py-1 rounded-full">Cybersecurity</span>
+                            <span class="text-[#8B5CF6]"><i class="fas fa-shield-alt"></i></span>
+                        </div>
+                        <h4 class="text-lg font-bold text-[#F8FAFC] mb-2">Network Vulnerability Scanner</h4>
+                        <p class="text-xs text-[#CBD5E1] leading-relaxed mb-4">
+                            Automated network security scanner designed in Python for open port detection, device identification, and basic network vulnerability assessment.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-1 text-[11px] font-mono text-[#CBD5E1] pt-4 border-t border-[rgba(255,255,255,0.08)]">
+                        <span class="bg-[#080B12] px-2 py-0.5 rounded">Python</span>
+                        <span class="bg-[#080B12] px-2 py-0.5 rounded">Port Scanning</span>
+                        <span class="bg-[#080B12] px-2 py-0.5 rounded text-[#8B5CF6]">Security</span>
+                    </div>
+                </div>
+
+                <!-- Project 6: Custom HTTP Client -->
+                <div class="bg-[#111827]/90 backdrop-blur rounded-2xl p-6 border border-[rgba(255,255,255,0.08)] flex flex-col justify-between hover:border-[rgba(255,255,255,0.2)] transition shadow-lg">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-[10px] font-mono font-bold uppercase tracking-wider bg-[#CBD5E1]/10 text-[#CBD5E1] border border-[#CBD5E1]/20 px-2.5 py-1 rounded-full">Protocol Design</span>
+                            <span class="text-[#CBD5E1]"><i class="fas fa-globe"></i></span>
+                        </div>
+                        <h4 class="text-lg font-bold text-[#F8FAFC] mb-2">Custom HTTP Socket Client</h4>
+                        <p class="text-xs text-[#CBD5E1] leading-relaxed mb-4">
+                            Low-level HTTP protocol client constructed in Python using raw sockets to handle HTTP GET requests and TCP handshakes directly.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-1 text-[11px] font-mono text-[#CBD5E1] pt-4 border-t border-[rgba(255,255,255,0.08)]">
+                        <span class="bg-[#080B12] px-2 py-0.5 rounded">Python</span>
+                        <span class="bg-[#080B12] px-2 py-0.5 rounded">HTTP</span>
+                        <span class="bg-[#080B12] px-2 py-0.5 rounded text-[#CBD5E1]">Sockets</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Training Timeline -->
+    <section id="timeline" class="py-20 px-6 relative z-10">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-xs font-mono font-bold text-[#FF9900] uppercase tracking-widest mb-2">Qualifications</h2>
+                <h3 class="text-3xl font-extrabold text-[#F8FAFC]">Education & Technical Bootcamps</h3>
+            </div>
+
+            <div class="relative border-l border-[rgba(255,255,255,0.12)] ml-4 md:ml-32 space-y-12">
+                
+                <!-- Education -->
+                <div class="relative pl-8">
+                    <div class="absolute -left-3 top-1.5 w-6 h-6 bg-[#FF9900] rounded-full border-4 border-[#080B12] flex items-center justify-center text-[10px] text-[#080B12] font-bold shadow-md">1</div>
+                    <div class="text-xs font-mono font-semibold text-[#FF9900] mb-1">2023 - July 2027 (Expected)</div>
+                    <h4 class="text-lg font-bold text-[#F8FAFC]">Bachelor in IT Networks</h4>
+                    <div class="text-xs text-[#94A3B8] mb-2">New Assiut Technological University — Faculty of Industry & Energy Technology</div>
+                    <p class="text-xs text-[#CBD5E1] leading-relaxed">
+                        Top Student standing (Excellent grade) for three consecutive academic years. Specialized in Network Infrastructure and Cloud Security.
+                    </p>
+                </div>
+
+                <!-- DEPI -->
+                <div class="relative pl-8">
+                    <div class="absolute -left-3 top-1.5 w-6 h-6 bg-[#111827] border-2 border-[#FF9900] rounded-full"></div>
+                    <div class="text-xs font-mono font-semibold text-[#FF9900] mb-1">Digital Egypt Pioneers Initiative (DEPI)</div>
+                    <h4 class="text-lg font-bold text-[#F8FAFC]">AWS Security Cloud Computing Track</h4>
+                    <div class="text-xs text-[#94A3B8] mb-2">Infrastructure & Security Specialization</div>
+                    <p class="text-xs text-[#CBD5E1] leading-relaxed">
+                        Intensive training program focusing on AWS Cloud Computing, Identity & Access Management (IAM), Virtual Private Clouds (VPC), and Cloud Infrastructure Security.
+                    </p>
+                </div>
+
+                <!-- ITI & NTI -->
+                <div class="relative pl-8">
+                    <div class="absolute -left-3 top-1.5 w-6 h-6 bg-[#111827] border-2 border-[#CBD5E1] rounded-full"></div>
+                    <div class="text-xs font-mono font-semibold text-[#CBD5E1] mb-1">ITI & NTI Specialized Training Programs</div>
+                    <h4 class="text-lg font-bold text-[#F8FAFC]">Cisco CCNA, Linux & AI Fundamentals</h4>
+                    <div class="text-xs text-[#94A3B8] mb-2">Information Technology Institute & National Telecommunication Institute</div>
+                    <p class="text-xs text-[#CBD5E1] leading-relaxed">
+                        Completed structured tracks in CCNA Routing & Switching, Python programming, Machine Learning basics, and Linux server administration.
+                    </p>
+                </div>
+
+                <!-- Tech Community Events -->
+                <div class="relative pl-8">
+                    <div class="absolute -left-3 top-1.5 w-6 h-6 bg-[#111827] border-2 border-[rgba(255,255,255,0.12)] rounded-full"></div>
+                    <div class="text-xs font-mono font-semibold text-[#94A3B8] mb-1">Community Bootcamps</div>
+                    <h4 class="text-lg font-bold text-[#F8FAFC]">InnovEgypt & DevFest Participant</h4>
+                    <p class="text-xs text-[#CBD5E1] leading-relaxed mt-1">
+                        Technology entrepreneurship training (InnovEgypt) and active community developer conference participant (DevFest).
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- YouTube Channel Feature Section (YouTube Brand Red Theme) -->
+    <section id="youtube" class="py-16 youtube-section-bg border-y border-[rgba(255,0,0,0.25)] px-6 relative z-10">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+            <div class="space-y-4 text-center md:text-left">
+                <div class="inline-flex items-center gap-2 px-3 py-1 text-xs font-mono font-bold text-[#FF0000] bg-[#FF0000]/10 rounded-full border border-[#FF0000]/30 shadow-[0_0_10px_rgba(255,0,0,0.2)]">
+                    <i class="fab fa-youtube"></i> Content Creation Initiative
+                </div>
+                <h3 class="text-2xl sm:text-3xl font-extrabold text-[#F8FAFC]">Cloud With Taha</h3>
+                <p class="text-xs sm:text-sm text-[#CBD5E1] max-w-xl leading-relaxed">
+                    A technical content initiative dedicated to simplifying complex technical topics: Networking (CCNA) → Linux Administration → AWS Cloud Computing → Cloud Security & Practical Labs.
+                </p>
+            </div>
+            <a href="https://youtube.com/@CloudWithTaha" target="_blank" class="px-6 py-3.5 bg-[#FF0000] hover:bg-[#cc0000] text-white font-bold rounded-xl transition flex items-center gap-2 text-sm whitespace-nowrap shadow-[0_0_20px_rgba(255,0,0,0.4)]">
+                <i class="fab fa-youtube text-lg"></i> Subscribe on YouTube
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact & Footer -->
+    <footer id="contact" class="py-16 bg-[#080B12]/95 backdrop-blur border-t border-[rgba(255,255,255,0.08)] px-6 relative z-10">
+        <div class="max-w-4xl mx-auto text-center space-y-8">
+            <div class="space-y-3">
+                <h3 class="text-2xl font-bold text-[#F8FAFC]">Let's Connect & Collaborate</h3>
+                <p class="text-xs sm:text-sm text-[#CBD5E1] max-w-md mx-auto">
+                    Open to AWS Cloud Engineering roles, Network Security internships, and collaborative cloud infrastructure projects.
+                </p>
+            </div>
+
+            <!-- Custom Colored Social Icons -->
+            <div class="flex flex-wrap justify-center items-center gap-6 text-3xl">
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/taha-tamer-0b98952a5" target="_blank" title="LinkedIn" class="brand-linkedin transition-transform transform hover:scale-110">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                
+                <!-- GitHub -->
+                <a href="https://github.com/tahatame" target="_blank" title="GitHub" class="brand-github transition-transform transform hover:scale-110">
+                    <i class="fab fa-github"></i>
+                </a>
+
+                <!-- WhatsApp -->
+                <a href="https://wa.me/201062395345" target="_blank" title="WhatsApp" class="brand-whatsapp transition-transform transform hover:scale-110">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+
+                <!-- Gmail -->
+                <a href="mailto:tahatamer.official@gmail.com" target="_blank" title="Gmail" class="brand-gmail transition-transform transform hover:scale-110">
+                    <i class="fas fa-envelope"></i>
+                </a>
+
+                <!-- Upwork -->
+                <a href="https://www.upwork.com/freelancers/~01d67db1c7bffe5f23?mp_source=share" target="_blank" title="Upwork" class="brand-upwork transition-transform transform hover:scale-110">
+                    <i class="fas fa-briefcase"></i>
+                </a>
+
+                <!-- YouTube -->
+                <a href="https://youtube.com/@CloudWithTaha" target="_blank" title="YouTube" class="brand-youtube transition-transform transform hover:scale-110">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+
+            <div class="pt-8 border-t border-[rgba(255,255,255,0.05)] text-xs text-[#64748B] font-mono">
+                &copy; 2026 Taha Tamer Salah. Designed for AWS S3 & CloudFront Deployment.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script File -->
+    <script src="js/script.js"></script>
+</body>
+</html>
